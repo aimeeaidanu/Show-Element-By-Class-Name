@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>aimeeaidanu's Get Element Value By Class Name method</title>
+    <style>
+    	.birds {
+        	font: 20px Calibri;
+            color: orange;
+            white-space:nowrap;
+        }
+        .reptiles {
+        	font: 20px Calibri;
+            color: green;
+            white-space:nowrap;
+        }
+        .pigs {
+        	font: 20px Calibri;
+            color: pink;
+            white-space:nowrap;
+        }
+        .button {
+          background-color: #4CAF50; /* Green */
+          border: none;
+          color: white;
+          padding: 20px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          cursor: pointer;
+          border-radius: 12px;
+        }
+        .text {
+        	font: 24px Calibri;
+        }
+    </style>
+</head>
+<body style='text-align: center; font: Calibri;'>
+   <p class='text'>Click the button to show elements (values) by class name (birds).</p>
+    <div>
+    	<p class='birds'>Rock Pigeon</p>
+        <p class='birds'>Black Vulture</p>
+        <p class='reptiles'>Snake</p>
+        <p class='birds'>Mourning Dove</p>
+        <p class='pigs'>Piglet</p>
+        <p class='reptiles'>Lizard</p>
+        <p class='reptiles'>Gecko</p>
+    </div>
+    
+    <input type='button' class="button" id='bt' onclick='findEleByClass("birds")' value='Show'>
+    <p id="msg"></p>
+</body>
+<script>
+    let findEleByClass = (cls) => {
+        let myclass = document.getElementsByClassName(cls);
+        let msg = document.getElementById('msg');
+
+       msg.innerHTML = '';        
+
+        for (i = 0; i <= myclass.length - 1; i++) {
+            msg.innerHTML +=  myclass[i].innerHTML + '<br />';
+        }
+    }
+</script>
+</html>
